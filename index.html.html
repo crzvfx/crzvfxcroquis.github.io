@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tecnologías - Ruta 4x4 Studio</title>
+	<style>
+		/* Estilos base inspirados en el diseño de tus compañeros */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: #ffffff;
+			/* Cambia la imagen de fondo por una de un Jeep o fondo off-road */
+			background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/background-4x4.jpg') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 40px 20px;
+			text-align: center;
+		}
+
+		h1, h2, h3, h4 {
+			color: #f39c12; /* Color naranja/amarillo llamativo para los títulos */
+		}
+
+		/* Fila contenedora para las dos tarjetas de información principales */
+		.info-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 30px;
+			justify-content: center;
+			margin-bottom: 5px;
+		}
+
+		/* Cajas semitransparentes con bordes redondeados (Idénticas a las imágenes) */
+		.card {
+			background: rgba(255, 255, 255, 0.15);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			border-radius: 25px;
+			padding: 35px;
+			flex: 1;
+			min-width: 300px;
+			box-sizing: border-box;
+			text-align: left;
+			box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+		}
+
+		.card p {
+			font-size: 1.1rem;
+			line-height: 1.6;
+			color: #e0e0e0;
+		}
+
+		.card ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		.card ul li {
+			font-size: 1.2rem;
+			padding: 8px 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.card ul li::before {
+			content: "• ";
+			color: #f39c12;
+			font-weight: bold;
+		}
+
+		/* Estilos para las secciones de imágenes integradas */
+		.card-img {
+			width: 100%;
+			border-radius: 15px;
+			margin-bottom: 15px;
+			object-fit: cover;
+			height: 200px;
+		}
+
+		/* Sección de la Galería de Desarrollo */
+		.gallery-section {
+			margin-top: 50px;
+		}
+
+		.gallery-section h2 {
+			font-size: 2rem;
+			margin-bottom: 30px;
+		}
+
+		/* Grid para acomodar las fotos de la galería (Como en image_2.png) */
+		.gallery-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 20px;
+		}
+
+		.gallery-item {
+			width: 100%;
+			height: 220px;
+			border-radius: 20px;
+			object-fit: cover;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+			transition: transform 0.3s ease;
+		}
+
+		.gallery-item:hover {
+			transform: scale(1.03);
+		}
+
+		/* Botón de acción inferior */
+		.btn-sitio {
+			display: inline-block;
+			background-color: #e74c3c;
+			color: white;
+			padding: 12px 35px;
+			border-radius: 50px;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 1.1rem;
+			margin-top: 40px;
+			box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+			transition: background 0.3s ease;
+		}
+
+		.btn-sitio:hover {
+			background-color: #c0392b;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- SECCIÓN 1: TECNOLOGÍAS Y QUÉ ES EL PROYECTO -->
+		<div class="info-row">
+			<!-- Caja Izquierda: Tecnologías Utilizadas -->
+			<div class="card">
+				<h2>Tecnologías Utilizadas</h2>
+				<ul>
+					<li>HTML5 (Estructuración de la plataforma)</li>
+					<li>CSS3 (Diseño responsivo y estilos visuales)</li>
+					<li>Python (Lógica de configuración del entorno)</li>
+					<li>Visual Studio Code (Entorno de desarrollo)</li>
+					<li>Git / GitHub (Control de versiones)</li>
+				</ul>
+			</div>
+
+			<!-- Caja Derecha: Explicación del Tema -->
+			<div class="card">
+				<h2>¿Qué es la Configuración y Diseño 4x4?</h2>
+				<p>
+					El desarrollo de plataformas web para el sector automotriz off-road permite a los usuarios interactuar con componentes mecánicos y estéticos en tiempo real. A través del código, logramos enlazar catálogos de piezas, cálculos de presupuestos y compatibilidad técnica para recrear el Jeep ideal antes de llevarlo a la producción real.
+				</p>
+			</div>
+		</div>
+
+		<!-- SECCIÓN 2: IMPORTANCIA Y PERFIL PROFESIONAL -->
+		<div class="info-row" style="margin-top: 40px;">
+			<!-- Caja Izquierda: Importancia -->
+			<div class="card">
+				<h2>Importancia</h2>
+				<p>
+					La programación web orientada al tuning off-road transforma ideas complejas de ingeniería en interfaces accesibles para cualquier apasionado. Gracias a esto, se reduce el margen de error en la compra de refacciones costosas, optimizando la personalización de suspensiones, rines y equipo de rescate en un entorno digital seguro.
+				</p>
+			</div>
+
+			<!-- Caja Derecha: Perfil con Imagen -->
+			<div class="card">
+				<img src="images/t2.jpg" class="card-img" alt="Desarrollo Ruta 4x4">
+				<h2>Perfil Profesional</h2>
+				<p>
+					Un desarrollador enfocado en sistemas automotrices combina la lógica matemática, el diseño de interfaces (UI/UX) y el conocimiento de la cultura off-road para construir experiencias digitales innovadoras y funcionales.
+				</p>
+			</div>
+		</div>
+
+		<!-- SECCIÓN 3: GALERÍA DE DESARROLLO (Estilo image_2.png) -->
+		<section class="gallery-section">
+			<h2>Galería de Desarrollo de Ruta 4x4</h2>
+			<div class="gallery-grid">
+				<img src="images/j1.png" class="gallery-item" alt="Wrangler Concept">
+				<img src="images/j5.png" class="gallery-item" alt="Gladiator JT Setup">
+				<img src="images/right.png" class="gallery-item" alt="Workspace">
+				<!-- Agrega aquí más imágenes si lo requieres -->
+			</div>
+		</section>
+
+		<!-- BOTÓN FINAL DE RETORNO O SITIO OFICIAL -->
+		<a href="file:///D:/web/index.html" class="btn-sitio">Volver a Ruta 4x4 Studio</a>
+
+	</div>
+
+</body>
+</html>
