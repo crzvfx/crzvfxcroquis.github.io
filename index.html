@@ -1,199 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tecnologías - Ruta 4x4 Studio</title>
-	<style>
-		/* Estilos base inspirados en el diseño de tus compañeros */
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			color: #ffffff;
-			/* Cambia la imagen de fondo por una de un Jeep o fondo off-road */
-			background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/background-4x4.jpg') no-repeat center center fixed;
-			background-size: cover;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Automotriz Pro</title>
+    <style>
+        /* Importamos Bebas Neue para títulos y Space Grotesk para texto */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;700&display=swap');
 
-		.container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 40px 20px;
-			text-align: center;
-		}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-		h1, h2, h3, h4 {
-			color: #f39c12; /* Color naranja/amarillo llamativo para los títulos */
-		}
+        body {
+            background-color: #0f0f0f;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-		/* Fila contenedora para las dos tarjetas de información principales */
-		.info-row {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 30px;
-			justify-content: center;
-			margin-bottom: 5px;
-		}
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #161616;
+            border: 4px solid #000000;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
 
-		/* Cajas semitransparentes con bordes redondeados (Idénticas a las imágenes) */
-		.card {
-			background: rgba(255, 255, 255, 0.15);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			border-radius: 25px;
-			padding: 35px;
-			flex: 1;
-			min-width: 300px;
-			box-sizing: border-box;
-			text-align: left;
-			box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-		}
+        /* Estilo para los bloques con borde negro */
+        .box {
+            background-color: #222222;
+            border: 2px solid #000000;
+            border-radius: 2px;
+            overflow: hidden; /* Para que la imagen no se salga de las esquinas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-		.card p {
-			font-size: 1.1rem;
-			line-height: 1.6;
-			color: #e0e0e0;
-		}
+        /* TITULOS EN ROJO Y FUENTE BEBAS NEUE */
+        .titulo-rojo {
+            color: #ff0000;
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-		.card ul {
-			list-style-type: none;
-			padding: 0;
-		}
+        .cabecera {
+            width: 100%;
+            height: 80px;
+            font-size: 3.5rem;
+        }
 
-		.card ul li {
-			font-size: 1.2rem;
-			padding: 8px 0;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		}
+        /* SECCIÓN MEDIA */
+        .main-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
 
-		.card ul li::before {
-			content: "• ";
-			color: #f39c12;
-			font-weight: bold;
-		}
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-		/* Estilos para las secciones de imágenes integradas */
-		.card-img {
-			width: 100%;
-			border-radius: 15px;
-			margin-bottom: 15px;
-			object-fit: cover;
-			height: 200px;
-		}
+        .sidebar-points {
+            flex-grow: 1;
+            padding: 25px;
+            align-items: flex-start;
+            text-align: left;
+            background-color: #1a1a1a;
+        }
 
-		/* Sección de la Galería de Desarrollo */
-		.gallery-section {
-			margin-top: 50px;
-		}
+        .sidebar-points li {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            list-style: none;
+            border-left: 4px solid #ff0000; /* Detalle rojo lateral */
+            padding-left: 10px;
+        }
 
-		.gallery-section h2 {
-			font-size: 2rem;
-			margin-bottom: 30px;
-		}
+        /* SUBTÍTULO GRANDE (Antes Notas) */
+        .subtitulo-grande {
+            height: 70px;
+            font-size: 2rem;
+            background-color: #000000;
+        }
 
-		/* Grid para acomodar las fotos de la galería (Como en image_2.png) */
-		.gallery-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 20px;
-		}
+        .cuerpo {
+            padding: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+            background-color: #1a1a1a;
+            border-left: 2px solid #000000;
+        }
 
-		.gallery-item {
-			width: 100%;
-			height: 220px;
-			border-radius: 20px;
-			object-fit: cover;
-			box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-			transition: transform 0.3s ease;
-		}
+        /* SECCIÓN DE IMÁGENES (BLOQUES Y MINIATURAS) */
+        .bottom-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 0.8fr;
+            gap: 20px;
+        }
 
-		.gallery-item:hover {
-			transform: scale(1.03);
-		}
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-		/* Botón de acción inferior */
-		.btn-sitio {
-			display: inline-block;
-			background-color: #e74c3c;
-			color: white;
-			padding: 12px 35px;
-			border-radius: 50px;
-			text-decoration: none;
-			font-weight: bold;
-			font-size: 1.1rem;
-			margin-top: 40px;
-			box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
-			transition: background 0.3s ease;
-		}
+        /* Contenedores para fotos */
+        .foto-container {
+            width: 100%;
+            transition: transform 0.3s, border-color 0.3s;
+        }
 
-		.btn-sitio:hover {
-			background-color: #c0392b;
-		}
-	</style>
+        .foto-container:hover {
+            transform: scale(1.02);
+            border-color: #ff0000;
+        }
+
+        .bloque-img { height: 140px; }
+        .miniatura-img { height: 90px; }
+
+        /* Estilo para la imagen dentro del cuadro */
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .box img:hover {
+            opacity: 1;
+        }
+
+        /* SECCIÓN MEDIA / VER MÁS */
+        .media-title {
+            height: 150px;
+            font-size: 2.2rem;
+        }
+
+        .ver-mas {
+            height: 65px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            background-color: #ff0000;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .ver-mas:hover {
+            background-color: #cc0000;
+            letter-spacing: 4px;
+        }
+
+        @media (max-width: 800px) {
+            .main-section, .bottom-section { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-	<div class="container">
+    <div class="container">
+        <div class="box cabecera titulo-rojo">Diseño de Carros</div>
 
-		<!-- SECCIÓN 1: TECNOLOGÍAS Y QUÉ ES EL PROYECTO -->
-		<div class="info-row">
-			<!-- Caja Izquierda: Tecnologías Utilizadas -->
-			<div class="card">
-				<h2>Tecnologías Utilizadas</h2>
-				<ul>
-					<li>HTML5 (Estructuración de la plataforma)</li>
-					<li>CSS3 (Diseño responsivo y estilos visuales)</li>
-					<li>Python (Lógica de configuración del entorno)</li>
-					<li>Visual Studio Code (Entorno de desarrollo)</li>
-					<li>Git / GitHub (Control de versiones)</li>
-				</ul>
-			</div>
+        <div class="main-section">
+            <div class="sidebar">
+                <div class="box sidebar-points">
+                    <ul>
+                        <li>Modelado Digital CAD</li>
+                        <li>Realidad Inmersiva</li>
+                        <li>Ingeniería CAE</li>
+                        <li>Diseño Generativo AI</li>
+                        <li>Prototipado Físico</li>
+                    </ul>
+                </div>
+                <div class="box subtitulo-grande titulo-rojo">Concepto Final</div>
+            </div>
 
-			<!-- Caja Derecha: Explicación del Tema -->
-			<div class="card">
-				<h2>¿Qué es la Configuración y Diseño 4x4?</h2>
-				<p>
-					El desarrollo de plataformas web para el sector automotriz off-road permite a los usuarios interactuar con componentes mecánicos y estéticos en tiempo real. A través del código, logramos enlazar catálogos de piezas, cálculos de presupuestos y compatibilidad técnica para recrear el Jeep ideal antes de llevarlo a la producción real.
-				</p>
-			</div>
-		</div>
+            <div class="box cuerpo">
+                El diseño automotriz es la disciplina que fusiona arte, ingeniería y aerodinámica para crear la identidad visual y funcional de un vehículo, dividiéndose principalmente en el desarrollo exterior de la carrocería, la ergonomía del espacio interior y la experiencia digital de sus pantallas (UI/UX). Este proceso creativo evoluciona desde los primeros bocetos a mano y el modelado en software 3D logrando un equilibrio perfecto entre una estética con personalidad y la máxima seguridad.
+            </div>
+        </div>
 
-		<!-- SECCIÓN 2: IMPORTANCIA Y PERFIL PROFESIONAL -->
-		<div class="info-row" style="margin-top: 40px;">
-			<!-- Caja Izquierda: Importancia -->
-			<div class="card">
-				<h2>Importancia</h2>
-				<p>
-					La programación web orientada al tuning off-road transforma ideas complejas de ingeniería en interfaces accesibles para cualquier apasionado. Gracias a esto, se reduce el margen de error en la compra de refacciones costosas, optimizando la personalización de suspensiones, rines y equipo de rescate en un entorno digital seguro.
-				</p>
-			</div>
+        <div class="bottom-section">
+            <div class="column">
+                <div class="box foto-container bloque-img">
+                    <img src="images/carro4.png" alt="Bloque 1">
+                </div>
+                <div class="box foto-container miniatura-img">
+                    <img src="images/carro3.png" alt="Miniatura 1">
+                </div>
+            </div>
 
-			<!-- Caja Derecha: Perfil con Imagen -->
-			<div class="card">
-				<img src="images/t2.jpg" class="card-img" alt="Desarrollo Ruta 4x4">
-				<h2>Perfil Profesional</h2>
-				<p>
-					Un desarrollador enfocado en sistemas automotrices combina la lógica matemática, el diseño de interfaces (UI/UX) y el conocimiento de la cultura off-road para construir experiencias digitales innovadoras y funcionales.
-				</p>
-			</div>
-		</div>
+            <div class="column">
+                <div class="box foto-container bloque-img">
+                    <img src="images/carro.png" alt="Bloque 2">
+                </div>
+                <div class="box foto-container miniatura-img">
+                    <img src="images/carro2.png" alt="Miniatura 2">
+                </div>
+            </div>
 
-		<!-- SECCIÓN 3: GALERÍA DE DESARROLLO (Estilo image_2.png) -->
-		<section class="gallery-section">
-			<h2>Galería de Desarrollo de Ruta 4x4</h2>
-			<div class="gallery-grid">
-				<img src="images/j1.png" class="gallery-item" alt="Wrangler Concept">
-				<img src="images/j5.png" class="gallery-item" alt="Gladiator JT Setup">
-				<img src="images/right.png" class="gallery-item" alt="Workspace">
-				<!-- Agrega aquí más imágenes si lo requieres -->
-			</div>
-		</section>
-
-		<!-- BOTÓN FINAL DE RETORNO O SITIO OFICIAL -->
-		<a href="file:///D:/web/index.html" class="btn-sitio">Volver a Ruta 4x4 Studio</a>
-
-	</div>
+            <div class="column">
+                <div class="box media-title titulo-rojo">Galería</div>
+                <button class="box ver-mas">Ver Más</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
